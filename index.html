@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروپوزال همکاری یکتانت و مستر کالا</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Sahel Font Face */
+        @font-face {
+            font-family: 'Sahel';
+            src: url('Yektanet/fonts/font sahel/Sahel.eot');
+            src: url('Yektanet/fonts/font sahel/Sahel.eot?#iefix') format('embedded-opentype'),
+                 url('Yektanet/fonts/font sahel/Sahel.woff') format('woff'),
+                 url('Yektanet/fonts/font sahel/Sahel.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sahel';
+            src: url('Yektanet/fonts/font sahel/Sahel-Bold.eot');
+            src: url('Yektanet/fonts/font sahel/Sahel-Bold.eot?#iefix') format('embedded-opentype'),
+                 url('Yektanet/fonts/font sahel/Sahel-Bold.woff') format('woff'),
+                 url('Yektanet/fonts/font sahel/Sahel-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sahel';
+            src: url('Yektanet/fonts/font sahel/Sahel-Black.eot');
+            src: url('Yektanet/fonts/font sahel/Sahel-Black.eot?#iefix') format('embedded-opentype'),
+                 url('Yektanet/fonts/font sahel/Sahel-Black.woff') format('woff'),
+                 url('Yektanet/fonts/font sahel/Sahel-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'Sahel', sans-serif;
+            background-color: #f2f2f2;
+            color: #323232;
+        }
+        
+        /* Yektanet Color Palette */
+        .bg-yk-yellow { background-color: #fed813; }
+        .bg-yk-saffron { background-color: #f3c42e; }
+        .bg-yk-jet { background-color: #323232; }
+        .text-yk-jet { color: #323232; }
+        .text-yk-yellow { color: #fed813; }
+        
+        /* Hexagon Pattern Background */
+        .hex-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V10c0-5.523-4.477-10-10-10s-10 4.477-10 10v20c0 5.523 4.477 10 10 10z' fill='%23fed813' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .range-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e5e7eb;
+            border-radius: 5px;
+            outline: none;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fed813;
+            border: 2px solid #323232;
+            cursor: pointer;
+        }
+        
+        .range-slider-dark {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #4b5563;
+            border-radius: 5px;
+            outline: none;
+        }
+        .range-slider-dark::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fed813;
+            border: 2px solid #fff;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        .range-slider-dark:disabled::-webkit-slider-thumb {
+            background: #6b7280;
+            border-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .capacity-bar {
+            transition: width 0.3s ease;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+        .pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+        
+        .masterkala-link {
+            color: #2563eb;
+            text-decoration: underline;
+            transition: opacity 0.2s;
+        }
+        .masterkala-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="hex-bg min-h-screen pb-12">
+
+    <!-- Header / Branding -->
+    <header class="bg-yk-jet text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-32 h-8 flex items-center justify-center flex-shrink-0">
+                    <img src="Yektanet/logo/Logo Export-All Variants/Asset 3.svg" alt="Yektanet Logo" class="h-full w-auto">
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm md:text-base leading-tight">پروپوزال هدایای سازمانی</h1>
+                    <p class="text-xs text-gray-400">واحد پارتنرشیپ منابع انسانی</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-xs text-[#fed813]">گیرنده: امیرحسین امامی (CHRO)</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 pt-6 space-y-6">
+
+        <!-- Executive Summary Card -->
+        <section class="bg-white rounded-xl shadow-sm border-r-4 border-yk-yellow overflow-hidden">
+            <div class="p-5">
+                <h2 class="text-xl font-bold mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-gift text-yk-saffron"></i>
+                    موضوع: جایگزینی هدیه فیزیکی با حق انتخاب
+                </h2>
+                <p class="text-sm text-gray-600 leading-relaxed text-justify">
+                    در راستای بهینه‌سازی بودجه و افزایش رضایت همکاران، پیشنهاد می‌شود در پک هدایای امسال، به جای انتخاب یک کالای ثابت (مثل پاوربانک یا ماگ)، از 
+                    <span class="bg-yellow-100 px-1 rounded font-bold">کارت اعتباری <a href="https://masterkala.com/" target="_blank" class="masterkala-link">مستر کالا</a></span>
+                    استفاده شود. این طرح بر پایه <strong>تهاتر خدمات تبلیغاتی</strong> بنا شده است.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Solution: MasterKala Analysis -->
+        <section class="bg-white rounded-xl shadow-sm p-5">
+            <h3 class="font-bold text-lg mb-4 text-yk-jet border-b pb-2">چرا <a href="https://masterkala.com/" target="_blank" class="masterkala-link">مستر کالا</a>؟</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-layer-group text-yk-saffron"></i>
+                        <h4 class="font-bold text-sm">تنوع بی‌نظیر گجت‌ها</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 text-justify">
+                        مرجع اصلی لوازم جانبی در ایران. همکاران ما (که اغلب Tech-savvy هستند) می‌توانند دقیقاً آنچه نیاز دارند را انتخاب کنند (ساعت هوشمند، هندزفری، لوازم گیمینگ و...).
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i class="fa-solid fa-wallet text-yk-saffron"></i>
+                        <h4 class="font-bold text-sm">قدرت خرید ۲ میلیونی</h4>
+                    </div>
+                    <p class="text-xs text-gray-500 text-justify">
+                        بازه ۲ میلیون تومان در <a href="https://masterkala.com/" target="_blank" class="masterkala-link">مستر کالا</a>، "نقطه طلایی" است. در این بازه بهترین‌های برندهای شیائومی، انکر و QCY قابل خریداری هستند.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINANCIAL CALCULATOR (The Core Logic) -->
+        <section class="bg-yk-jet text-white rounded-xl shadow-lg p-6 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-32 h-32 bg-[#fed813] opacity-5 rounded-full -translate-x-10 -translate-y-10"></div>
+            
+            <h3 class="font-bold text-lg mb-6 flex items-center gap-2 relative z-10">
+                <i class="fa-solid fa-calculator text-[#fed813]"></i>
+                تحلیل هزینه و فایده (مدل تهاتر)
+            </h3>
+
+            <!-- Sliders -->
+            <div class="space-y-6 relative z-10">
+                <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <label>تعداد پرسنل</label>
+                        <span id="display-count" class="font-bold text-[#fed813]">450 نفر</span>
+                    </div>
+                    <input type="range" id="input-count" min="100" max="1000" step="10" value="500" class="range-slider">
+                </div>
+
+                <div>
+                    <div class="flex justify-between text-sm mb-2">
+                        <label>مبلغ کارت هدیه (تومان)</label>
+                        <span id="display-value" class="font-bold text-[#fed813]">2,000,000</span>
+                    </div>
+                    <input type="range" id="input-value" min="500000" max="5000000" step="500000" value="2000000" class="range-slider">
+                </div>
+            </div>
+
+            <!-- Analysis Box -->
+            <div class="mt-8 bg-white/10 rounded-lg p-4 backdrop-blur-sm border border-white/10">
+                <div class="grid grid-cols-2 gap-y-4 text-center">
+                    
+                    <div class="border-l border-white/20">
+                        <p class="text-xs text-gray-300 mb-1">ارزش ریالی پکیج (صورت حساب)</p>
+                        <p id="total-invoice" class="text-lg font-bold">900,000,000</p>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-300 mb-1">نوع پرداخت</p>
+                        <p class="text-sm font-bold text-[#fed813]">شارژ پنل (تهاتر)</p>
+                    </div>
+
+                    <div class="col-span-2 h-px bg-white/20 my-1"></div>
+
+                    <div class="col-span-2 bg-white/5 rounded-lg p-3 border border-[#fed813]/30">
+                        <div class="flex justify-between items-center mb-2 border-b border-white/10 pb-2">
+                             <span class="text-xs text-gray-300">سود حاصل از تهاتر (<span id="profit-percent">50</span>٪):</span>
+                             <span id="savings-amount" class="text-xs font-bold text-green-400">450,000,000 تومان</span>
+                        </div>
+                        
+                        <p class="text-xs text-gray-300 mb-1">هزینه نهایی (Cash-out) برای یکتانت:</p>
+                        <div class="flex justify-center items-end gap-2">
+                            <span id="real-cost" class="text-4xl font-bold text-[#fed813] drop-shadow-md">450,000,000</span>
+                            <span class="text-xs text-[#fed813] mb-2">تومان</span>
+                        </div>
+                        <p class="text-[10px] text-gray-400 mt-2 text-center">*این مبلغ معادل بهای تمام شده شارژ پنل است و خروج نقدینگی ندارد.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW SECTION: Budget Breakdown -->
+        <section class="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-xl shadow-lg p-6 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-[#fed813] opacity-5 rounded-full translate-x-10 -translate-y-10"></div>
+            <div class="absolute bottom-0 left-0 w-24 h-24 bg-green-500 opacity-5 rounded-full -translate-x-6 translate-y-6"></div>
+            
+            <h3 class="font-bold text-lg mb-4 flex items-center gap-2 relative z-10">
+                <i class="fa-solid fa-chart-pie text-[#fed813]"></i>
+                شکست بودجه تبلیغاتی
+            </h3>
+            <p class="text-xs text-gray-400 mb-6">با اسلایدرها می‌توانید سهم هر خدمت را تنظیم کنید. ظرفیت آزاد نشان‌دهنده بودجه تخصیص‌نیافته است.</p>
+
+            <!-- Free Capacity Bar -->
+            <div class="mb-6 bg-white/5 rounded-lg p-4 border border-white/10">
+                <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-box-open text-green-400"></i>
+                        <span class="text-sm font-bold">ظرفیت آزاد</span>
+                    </div>
+                    <span id="free-capacity-amount" class="text-sm font-bold text-green-400">0 تومان</span>
+                </div>
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div id="free-capacity-bar" class="capacity-bar bg-gradient-to-r from-green-500 to-green-400 h-3 rounded-full" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-[10px] text-gray-500 mt-1">
+                    <span>۰</span>
+                    <span id="free-capacity-percent" class="text-green-400">۰٪ از کل بودجه</span>
+                    <span id="total-budget-label">۹۰۰M</span>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="space-y-4" id="services-container">
+                
+                <!-- Service 1: شارژ پنل -->
+                <div class="service-card bg-white/5 rounded-lg p-4 border border-white/10 hover:border-[#fed813]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-coins text-amber-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">شارژ پنل</h4>
+                                <span class="text-[10px] text-gray-400">کاست: ۷۰٪</span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <p id="service-0-amount" class="font-bold text-[#fed813]">180,000,000</p>
+                            <p class="text-[10px] text-gray-400"><span id="service-0-percent">20</span>٪ از بودجه</p>
+                        </div>
+                    </div>
+                    <input type="range" id="service-0-slider" min="0" max="100" value="20" class="range-slider-dark w-full" data-service="0">
+                    <div class="flex justify-between mt-2 text-[10px]">
+                        <div class="flex gap-4">
+                            <span class="text-gray-400">هزینه: <span id="service-0-cost" class="text-orange-400">126,000,000</span></span>
+                            <span class="text-gray-400">سود: <span id="service-0-profit" class="text-green-400">54,000,000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: تبلیغات ویدیویی -->
+                <div class="service-card bg-white/5 rounded-lg p-4 border border-white/10 hover:border-[#fed813]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-video text-red-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">تبلیغات ویدیویی</h4>
+                                <span class="text-[10px] text-gray-400">کاست: ۳۰٪</span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <p id="service-1-amount" class="font-bold text-[#fed813]">180,000,000</p>
+                            <p class="text-[10px] text-gray-400"><span id="service-1-percent">20</span>٪ از بودجه</p>
+                        </div>
+                    </div>
+                    <input type="range" id="service-1-slider" min="0" max="100" value="20" class="range-slider-dark w-full" data-service="1">
+                    <div class="flex justify-between mt-2 text-[10px]">
+                        <div class="flex gap-4">
+                            <span class="text-gray-400">هزینه: <span id="service-1-cost" class="text-orange-400">54,000,000</span></span>
+                            <span class="text-gray-400">سود: <span id="service-1-profit" class="text-green-400">126,000,000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: بنر ثابت -->
+                <div class="service-card bg-white/5 rounded-lg p-4 border border-white/10 hover:border-[#fed813]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-image text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">بنر ثابت</h4>
+                                <span class="text-[10px] text-gray-400">کاست: ۳۰٪</span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <p id="service-2-amount" class="font-bold text-[#fed813]">180,000,000</p>
+                            <p class="text-[10px] text-gray-400"><span id="service-2-percent">20</span>٪ از بودجه</p>
+                        </div>
+                    </div>
+                    <input type="range" id="service-2-slider" min="0" max="100" value="10" class="range-slider-dark w-full" data-service="2">
+                    <div class="flex justify-between mt-2 text-[10px]">
+                        <div class="flex gap-4">
+                            <span class="text-gray-400">هزینه: <span id="service-2-cost" class="text-orange-400">54,000,000</span></span>
+                            <span class="text-gray-400">سود: <span id="service-2-profit" class="text-green-400">126,000,000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: تریبون -->
+                <div class="service-card bg-white/5 rounded-lg p-4 border border-white/10 hover:border-[#fed813]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-bullhorn text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">تریبون</h4>
+                                <span class="text-[10px] text-gray-400">کاست: ۵۰٪</span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <p id="service-3-amount" class="font-bold text-[#fed813]">180,000,000</p>
+                            <p class="text-[10px] text-gray-400"><span id="service-3-percent">20</span>٪ از بودجه</p>
+                        </div>
+                    </div>
+                    <input type="range" id="service-3-slider" min="0" max="100" value="0" class="range-slider-dark w-full" data-service="3">
+                    <div class="flex justify-between mt-2 text-[10px]">
+                        <div class="flex gap-4">
+                            <span class="text-gray-400">هزینه: <span id="service-3-cost" class="text-orange-400">90,000,000</span></span>
+                            <span class="text-gray-400">سود: <span id="service-3-profit" class="text-green-400">90,000,000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: بیلبورد دیجیتال -->
+                <div class="service-card bg-white/5 rounded-lg p-4 border border-white/10 hover:border-[#fed813]/30">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-tv text-cyan-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">بیلبورد دیجیتال</h4>
+                                <span class="text-[10px] text-gray-400">کاست: ۳۰٪</span>
+                            </div>
+                        </div>
+                        <div class="text-left">
+                            <p id="service-4-amount" class="font-bold text-[#fed813]">180,000,000</p>
+                            <p class="text-[10px] text-gray-400"><span id="service-4-percent">20</span>٪ از بودجه</p>
+                        </div>
+                    </div>
+                    <input type="range" id="service-4-slider" min="0" max="100" value="50" class="range-slider-dark w-full" data-service="4">
+                    <div class="flex justify-between mt-2 text-[10px]">
+                        <div class="flex gap-4">
+                            <span class="text-gray-400">هزینه: <span id="service-4-cost" class="text-orange-400">54,000,000</span></span>
+                            <span class="text-gray-400">سود: <span id="service-4-profit" class="text-green-400">126,000,000</span></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Summary Box -->
+            <div class="mt-6 bg-gradient-to-r from-[#fed813]/10 to-green-500/10 rounded-lg p-4 border border-[#fed813]/30">
+                <h4 class="font-bold text-sm mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-[#fed813]"></i>
+                    جمع‌بندی نهایی
+                </h4>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <p class="text-[10px] text-gray-400 mb-1">کل صورتحساب</p>
+                        <p id="summary-invoice" class="text-lg font-bold text-white">900,000,000</p>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <p class="text-[10px] text-gray-400 mb-1">هزینه واقعی</p>
+                        <p id="summary-cost" class="text-lg font-bold text-orange-400">378,000,000</p>
+                    </div>
+                    <div class="bg-white/5 rounded-lg p-3">
+                        <p class="text-[10px] text-gray-400 mb-1">سود کل</p>
+                        <p id="summary-profit" class="text-lg font-bold text-green-400">522,000,000</p>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-center items-center gap-4 text-sm">
+                    <span class="text-gray-400">میانگین کاست:</span>
+                    <span id="summary-avg-cost" class="font-bold text-[#fed813] text-lg">42٪</span>
+                    <span class="text-gray-400">|</span>
+                    <span class="text-gray-400">میانگین سود:</span>
+                    <span id="summary-avg-profit" class="font-bold text-green-400 text-lg">58٪</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Chart (CSS) -->
+        <section class="bg-white rounded-xl shadow-sm p-5">
+            <h3 class="font-bold text-sm mb-4">مقایسه جذابیت برای پرسنل</h3>
+            <div class="space-y-4">
+                <div>
+                    <div class="flex justify-between text-xs mb-1">
+                        <span>هدیه ثابت (مثلاً پاوربانک)</span>
+                        <span class="text-gray-500">۴۰٪ رضایت</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-gray-400 h-2.5 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="flex justify-between text-xs mb-1">
+                        <span class="font-bold text-yk-jet">کارت هدیه <a href="https://masterkala.com/" target="_blank" class="masterkala-link">مستر کالا</a> (حق انتخاب)</span>
+                        <span class="text-yk-saffron font-bold">۹۵٪ رضایت</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div class="bg-yk-yellow h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 p-3 bg-blue-50 border border-blue-100 rounded text-xs text-blue-800 leading-relaxed">
+                <strong>نکته مهم:</strong> تجربه نشان داده با کارت ۲ میلیونی، پرسنل معمولاً مبلغی هم از خودشان اضافه می‌کنند تا کالای مدل بالاتر (مثلاً ۳ میلیونی) بخرند. این یعنی افزایش حجم سبد خرید شریک تجاری (Upselling).
+            </div>
+        </section>
+
+        <!-- Product Examples Grid -->
+        <section class="bg-white rounded-xl shadow-sm p-5">
+            <h3 class="font-bold text-sm mb-4">با ۲ میلیون تومان چه می‌توان خرید؟</h3>
+            <p class="text-xs text-gray-600 mb-4 text-justify leading-relaxed">
+                بازه قیمتی ۲ میلیون تومان در <a href="https://masterkala.com/" target="_blank" class="masterkala-link">مستر کالا</a>، «<strong>بازه طلایی</strong>» برای خرید بهترین گجت‌های بازار است:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">🎧</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">هندزفری بلوتوثی</h4>
+                            <p class="text-xs text-gray-600">QCY, Haylou, Anker</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">⌚</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">ساعت هوشمند</h4>
+                            <p class="text-xs text-gray-600">Xiaomi, Mibro</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">🔋</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">پاوربانک فست</h4>
+                            <p class="text-xs text-gray-600">20,000 mAh</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">🎮</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">تجهیزات گیمینگ</h4>
+                            <p class="text-xs text-gray-600">Logitech, Razer (Entry)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">🚗</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">لوازم خودرو</h4>
+                            <p class="text-xs text-gray-600">Baseus Specialists</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3">
+                        <div class="text-3xl flex-shrink-0">📦</div>
+                        <div>
+                            <h4 class="font-bold text-sm mb-1">ست‌های هدیه</h4>
+                            <p class="text-xs text-gray-600">Custom Bundles</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer / Action -->
+        <footer class="mt-8 text-center pb-8">
+            <div class="bg-yk-saffron/10 border border-yk-saffron p-4 rounded-xl mb-4">
+                <p class="text-sm font-bold text-yk-jet mb-2">پیشنهاد نهایی</p>
+                <p class="text-xs text-gray-600">
+                    با توجه به حاشیه سود ۵۰٪، این همکاری نه تنها هزینه نقدی برای سازمان ندارد، بلکه پرستیژ هدایای سازمانی یکتانت را مدرن‌تر می‌کند.
+                </p>
+            </div>
+            <p class="text-xs text-gray-400">طراحی شده بر اساس هویت بصری یکتانت</p>
+            <p class="text-xs text-gray-400 mt-1">امید شجاعی - مدیر تیم پارتنرشیپ منابع انسانی</p>
+        </footer>
+
+    </main>
+
+    <!-- Logic Script -->
+    <script>
+        // ============ DATA ============
+        const services = [
+            { name: 'شارژ پنل', costRate: 0.70 },
+            { name: 'تبلیغات ویدیویی', costRate: 0.30 },
+            { name: 'بنر ثابت', costRate: 0.30 },
+            { name: 'تریبون', costRate: 0.50 },
+            { name: 'بیلبورد دیجیتال', costRate: 0.30 }
+        ];
+
+        // State
+        let totalBudget = 900000000;
+        let servicePercents = [20, 20, 10, 0, 50]; // درصد هر سرویس از کل بودجه
+
+        // ============ DOM ELEMENTS ============
+        const inputCount = document.getElementById('input-count');
+        const inputValue = document.getElementById('input-value');
+        const displayCount = document.getElementById('display-count');
+        const displayValue = document.getElementById('display-value');
+        const totalInvoice = document.getElementById('total-invoice');
+        const realCost = document.getElementById('real-cost');
+        const savingsAmount = document.getElementById('savings-amount');
+        const profitPercent = document.getElementById('profit-percent');
+
+        // ============ HELPERS ============
+        function formatNumber(num) {
+            return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function formatShort(num) {
+            if (num >= 1000000000) {
+                return (num / 1000000000).toFixed(1) + 'B';
+            } else if (num >= 1000000) {
+                return (num / 1000000).toFixed(0) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'K';
+            }
+            return num.toString();
+        }
+
+        // ============ MAIN CALCULATION ============
+        function calculateAll() {
+            const count = parseInt(inputCount.value);
+            const value = parseInt(inputValue.value);
+            
+            // Update displays
+            displayCount.textContent = `${count} نفر`;
+            displayValue.textContent = formatNumber(value);
+
+            // Calculate total budget
+            totalBudget = count * value;
+
+            // Calculate total used percent
+            const usedPercent = servicePercents.reduce((a, b) => a + b, 0);
+            const freePercent = 100 - usedPercent;
+
+            // Update free capacity
+            const freeAmount = totalBudget * (freePercent / 100);
+            document.getElementById('free-capacity-amount').textContent = formatNumber(freeAmount) + ' تومان';
+            document.getElementById('free-capacity-bar').style.width = freePercent + '%';
+            document.getElementById('free-capacity-percent').textContent = freePercent + '٪ از کل بودجه';
+            document.getElementById('total-budget-label').textContent = formatShort(totalBudget);
+
+            // Pulse effect when there's free capacity
+            const freeCapacityBar = document.getElementById('free-capacity-bar');
+            if (freePercent > 0) {
+                freeCapacityBar.classList.add('pulse-green');
+            } else {
+                freeCapacityBar.classList.remove('pulse-green');
+            }
+
+            // Calculate each service
+            let totalCostSum = 0;
+            let totalProfitSum = 0;
+            let allocatedBudget = 0;
+
+            services.forEach((service, index) => {
+                const percent = servicePercents[index];
+                const amount = totalBudget * (percent / 100);
+                const cost = amount * service.costRate;
+                const profit = amount - cost;
+
+                allocatedBudget += amount;
+                totalCostSum += cost;
+                totalProfitSum += profit;
+
+                // Update UI
+                document.getElementById(`service-${index}-amount`).textContent = formatNumber(amount);
+                document.getElementById(`service-${index}-percent`).textContent = percent;
+                document.getElementById(`service-${index}-cost`).textContent = formatNumber(cost);
+                document.getElementById(`service-${index}-profit`).textContent = formatNumber(profit);
+            });
+
+            // Update main section
+            totalInvoice.textContent = formatNumber(allocatedBudget);
+            realCost.textContent = formatNumber(totalCostSum);
+            savingsAmount.textContent = formatNumber(totalProfitSum) + ' تومان';
+            
+            // Calculate average profit percent
+            const avgProfitPercent = allocatedBudget > 0 ? Math.round((totalProfitSum / allocatedBudget) * 100) : 0;
+            profitPercent.textContent = avgProfitPercent;
+
+            // Update summary
+            document.getElementById('summary-invoice').textContent = formatNumber(allocatedBudget);
+            document.getElementById('summary-cost').textContent = formatNumber(totalCostSum);
+            document.getElementById('summary-profit').textContent = formatNumber(totalProfitSum);
+            
+            const avgCostPercent = allocatedBudget > 0 ? Math.round((totalCostSum / allocatedBudget) * 100) : 0;
+            document.getElementById('summary-avg-cost').textContent = avgCostPercent + '٪';
+            document.getElementById('summary-avg-profit').textContent = (100 - avgCostPercent) + '٪';
+        }
+
+        // ============ SERVICE SLIDER HANDLER ============
+        function handleServiceSlider(index, newPercent) {
+            const oldPercent = servicePercents[index];
+            const currentUsed = servicePercents.reduce((a, b) => a + b, 0);
+            const currentFree = 100 - currentUsed;
+            
+            const difference = newPercent - oldPercent;
+            
+            // Check if we're trying to increase beyond available capacity
+            if (difference > 0 && difference > currentFree) {
+                // Limit to available capacity
+                newPercent = oldPercent + currentFree;
+            }
+            
+            // Ensure non-negative
+            newPercent = Math.max(0, newPercent);
+            
+            servicePercents[index] = newPercent;
+            
+            // Update slider value
+            document.getElementById(`service-${index}-slider`).value = newPercent;
+            
+            calculateAll();
+        }
+
+        // ============ BUDGET CHANGE HANDLER (Preserve Ratios) ============
+        function handleBudgetChange() {
+            // Ratios are automatically preserved because we store percentages
+            calculateAll();
+        }
+
+        // ============ EVENT LISTENERS ============
+        inputCount.addEventListener('input', handleBudgetChange);
+        inputValue.addEventListener('input', handleBudgetChange);
+
+        // Service sliders
+        for (let i = 0; i < 5; i++) {
+            const slider = document.getElementById(`service-${i}-slider`);
+            slider.addEventListener('input', function() {
+                handleServiceSlider(i, parseInt(this.value));
+            });
+        }
+
+        // ============ INITIAL RUN ============
+        calculateAll();
+    </script>
+</body>
+</html>
