@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yektanet x MasterKala Proposal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jet: '#323232',
+                        goldWeb: '#fed813',
+                        saffron: '#f3c42e',
+                        whiteSmoke: '#f2f2f2',
+                    },
+                    fontFamily: {
+                        sans: ['Vazirmatn', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .slide {
+                @apply absolute inset-0 w-full h-full transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none flex flex-col;
+            }
+            .slide.active {
+                @apply opacity-100 pointer-events-auto z-10;
+            }
+            .hexagon-shape {
+                clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            }
+        }
+        body {
+            @apply font-sans overflow-hidden;
+        }
+    </style>
+</head>
+<body class="bg-white text-jet">
+
+    <!-- Main Container -->
+    <main id="deck" class="relative w-screen h-screen overflow-hidden">
+
+        <!-- SLIDE 1: Cover -->
+        <section class="slide active bg-jet text-white relative">
+            <!-- Decorative Hexagon/Strip -->
+            <div class="absolute bottom-0 right-0 w-1/3 h-64 bg-goldWeb transform translate-y-20 translate-x-10 rotate-12 opacity-90 z-0"></div>
+            <div class="absolute bottom-0 right-20 w-1/3 h-64 bg-saffron transform translate-y-32 translate-x-10 rotate-12 opacity-80 z-0"></div>
+
+            <div class="container mx-auto px-12 h-full flex flex-col justify-center relative z-10">
+                <!-- Logos Header -->
+                <div class="absolute top-12 w-full left-0 px-12 flex justify-between items-start">
+                    <div class="flex gap-6 items-center">
+                        <!-- Yektanet Logo Placeholder -->
+                        <div class="text-white font-bold text-xl border-l-2 border-goldWeb pl-4">
+                            یکتانت
+                        </div>
+                        <!-- MasterKala Logo Placeholder -->
+                        <div class="text-white font-bold text-xl">
+                            مستر کالا
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="text-center mt-10">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                        پیشنهاد همکاری <br/>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-goldWeb to-saffron">استراتژیک سازمانی</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-bold text-goldWeb mb-8">
+                        کمپین نوروزی یکتانت × مستر کالا
+                    </h2>
+                </div>
+
+                <!-- Footer -->
+                <div class="absolute bottom-12 w-full text-center text-gray-400 text-sm">
+                    زمستان ۱۴۰۲ | دپارتمان منابع انسانی ی��تانت
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: The Shift -->
+        <section class="slide bg-white">
+            <div class="container mx-auto px-8 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold mb-12 text-center text-jet">چرا امسال متفاوت عمل می‌کنیم؟</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 h-3/4 border border-gray-200 rounded-2xl overflow-hidden shadow-xl">
+                    <!-- Right: Traditional (Old Way) -->
+                    <div class="bg-gray-100 p-12 flex flex-col justify-center items-center text-center border-l border-gray-300 relative">
+                        <div class="absolute top-6 right-6 text-gray-400 font-bold text-6xl opacity-20">قدیم</div>
+                        <div class="w-32 h-32 bg-gray-300 rounded-full mb-6 flex items-center justify-center text-4xl grayscale">
+                            📅
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-600 mb-4">هدایای سنتی</h3>
+                        <p class="text-lg text-gray-500">
+                            هدایای تکراری و غیرهدفمند <br/>
+                            (سررسید، ماگ، خودکار) <br/>
+                            <span class="text-red-500 font-bold mt-2 block">= کاهش اشتیاق پرسنل</span>
+                        </p>
+                    </div>
+
+                    <!-- Left: Modern (New Way) -->
+                    <div class="bg-jet text-white p-12 flex flex-col justify-center items-center text-center relative overflow-hidden">
+                        <div class="absolute top-6 left-6 text-goldWeb font-bold text-6xl opacity-20">جدید</div>
+                        <!-- Decor -->
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-goldWeb rounded-full opacity-20 blur-2xl"></div>
+
+                        <div class="w-32 h-32 bg-goldWeb rounded-full mb-6 flex items-center justify-center text-4xl text-jet shadow-lg shadow-goldWeb/50">
+                            🎁
+                        </div>
+                        <h3 class="text-2xl font-bold text-goldWeb mb-4">حق انتخاب هوشمند</h3>
+                        <p class="text-xl font-bold mb-6">
+                            اهدای آزادی عمل به <br/>۵۰۰ استعداد دیجیتال
+                        </p>
+                        <p class="text-sm text-gray-300 mt-auto border-t border-gray-600 pt-4 w-full">
+                            ما در یکتانت به دنبال شریکی هستیم که زبان نسل تکنولوژی را بفهمد؛ <strong class="text-white">مستر کالا</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: Financial Offer -->
+        <section class="slide bg-whiteSmoke">
+            <div class="container mx-auto px-12 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-black text-jet mb-16 border-r-8 border-goldWeb pr-6">ابعاد همکاری مالی</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Box 1: Liquidity (Big) -->
+                    <div class="md:col-span-7 bg-white p-10 rounded-3xl shadow-lg border-b-8 border-jet flex flex-col justify-between">
+                        <div>
+                            <p class="text-gray-500 text-lg font-medium mb-2">حجم نقدینگی قرارداد</p>
+                            <h3 class="text-lg text-gray-400">تزریق آنی در پایان سال</h3>
+                        </div>
+                        <div class="text-right mt-8">
+                            <span class="text-6xl md:text-7xl font-black text-jet tracking-tighter">۱,۰۰۰,۰۰۰,۰۰۰</span>
+                            <span class="text-2xl text-goldWeb font-bold mr-2">تومان</span>
+                            <div class="w-full h-2 bg-goldWeb mt-2 rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <!-- Side Stats -->
+                    <div class="md:col-span-5 flex flex-col gap-6">
+                        <!-- Box 2: Credit per person -->
+                        <div class="bg-white p-8 rounded-3xl shadow-md border-r-8 border-saffron flex-1 flex flex-col justify-center">
+                            <span class="text-5xl font-bold text-jet">۲,۰۰۰,۰۰۰</span>
+                            <span class="text-gray-500 mt-2 font-medium">تومان اعتبار خرید برای هر نفر</span>
+                        </div>
+                        
+                        <!-- Box 3: Users -->
+                        <div class="bg-jet text-white p-8 rounded-3xl shadow-md border-r-8 border-goldWeb flex-1 flex flex-col justify-center relative overflow-hidden">
+                            <div class="z-10 relative">
+                                <span class="text-5xl font-bold text-goldWeb">+۴۰۰</span>
+                                <span class="text-gray-300 mt-2 block font-medium">خریدار بالقوه (User Acquisition)</span>
+                            </div>
+                            <!-- Background Graph Effect -->
+                            <div class="absolute bottom-0 left-0 right-0 h-16 bg-white opacity-5 flex items-end gap-1 px-4">
+                                <div class="w-1/6 h-2/6 bg-white"></div>
+                                <div class="w-1/6 h-3/6 bg-white"></div>
+                                <div class="w-1/6 h-4/6 bg-white"></div>
+                                <div class="w-1/6 h-3/6 bg-white"></div>
+                                <div class="w-1/6 h-5/6 bg-white"></div>
+                                <div class="w-1/6 h-full bg-white"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: Product Showcase -->
+        <section class="slide bg-white">
+            <div class="w-full h-full p-8 flex flex-col items-center justify-center">
+                <!-- Header -->
+                <div class="w-full max-w-6xl mb-10 flex flex-col md:flex-row justify-between items-center border-b-4 border-goldWeb pb-4">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-jet">با ۲ میلیون تومان چه می‌توان خرید؟</h1>
+                        <p class="text-gray-500 mt-2">سبد طلایی نوروز</p>
+                    </div>
+                    <!-- MasterKala Badge -->
+                    <div class="bg-jet text-goldWeb px-6 py-2 rounded-full font-bold mt-4 md:mt-0">
+                        مستر کالا
+                    </div> 
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl w-full">
+                    
+                    <!-- Card 1 -->
+                    <div class="group bg-whiteSmoke p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-t-4 border-saffron hover:-translate-y-2">
+                        <div class="w-full aspect-square bg-white rounded-xl mb-4 flex items-center justify-center text-4xl shadow-inner">
+                            🎧
+                        </div>
+                        <h3 class="font-bold text-lg mb-1 text-jet">هندزفری بلوتوثی</h3>
+                        <p class="text-xs text-gray-500 mb-4 h-8">QCY, Haylou, Anker</p>
+                        <div class="bg-jet text-white text-center py-2 rounded-lg text-sm font-bold group-hover:bg-goldWeb group-hover:text-jet transition-colors">
+                            ~ ۱.۸۵۰.۰۰۰ تومان
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group bg-whiteSmoke p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-t-4 border-saffron hover:-translate-y-2">
+                        <div class="w-full aspect-square bg-white rounded-xl mb-4 flex items-center justify-center text-4xl shadow-inner">
+                            ⌚
+                        </div>
+                        <h3 class="font-bold text-lg mb-1 text-jet">ساعت هوشمند</h3>
+                        <p class="text-xs text-gray-500 mb-4 h-8">Xiaomi, Mibro, Kieslect</p>
+                        <div class="bg-jet text-white text-center py-2 rounded-lg text-sm font-bold group-hover:bg-goldWeb group-hover:text-jet transition-colors">
+                            ~ ۲.۰۰۰.۰۰۰ تومان
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group bg-whiteSmoke p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-t-4 border-saffron hover:-translate-y-2">
+                        <div class="w-full aspect-square bg-white rounded-xl mb-4 flex items-center justify-center text-4xl shadow-inner">
+                            🔋
+                        </div>
+                        <h3 class="font-bold text-lg mb-1 text-jet">پک انرژی</h3>
+                        <p class="text-xs text-gray-500 mb-4 h-8">پاوربانک ۲۰۰۰۰ + کابل‌های حرفه‌ای</p>
+                        <div class="bg-jet text-white text-center py-2 rounded-lg text-sm font-bold group-hover:bg-goldWeb group-hover:text-jet transition-colors">
+                            ~ ۱.۹۵۰.۰۰۰ تومان
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="group bg-whiteSmoke p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border-t-4 border-saffron hover:-translate-y-2">
+                        <div class="w-full aspect-square bg-white rounded-xl mb-4 flex items-center justify-center text-4xl shadow-inner">
+                            🚗
+                        </div>
+                        <h3 class="font-bold text-lg mb-1 text-jet">خودرو و لای��‌استایل</h3>
+                        <p class="text-xs text-gray-500 mb-4 h-8">پمپ باد هوشمند، ماساژور تفنگی</p>
+                        <div class="bg-jet text-white text-center py-2 rounded-lg text-sm font-bold group-hover:bg-goldWeb group-hover:text-jet transition-colors">
+                            ~ ۲.۱۰۰.۰۰۰ تومان
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Win-Win -->
+        <section class="slide bg-jet text-white">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiMzMjMyMzIiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-20"></div>
+            
+            <div class="container mx-auto px-12 h-full flex flex-col justify-center relative z-10">
+                <h2 class="text-4xl font-bold mb-4 text-goldWeb">مزایای استراتژیک برای مستر کالا</h2>
+                <p class="text-xl text-gray-400 mb-12">فراتر از یک فروش عمده</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Item 1 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 min-w-[3rem] bg-goldWeb hexagon-shape flex items-center justify-center text-jet font-bold text-xl">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">جذب مشتری وفادار (User Acquisition)</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                ورود ۵۰۰ نیروی متخصص و Tech-Savvy به سایت شما. این افراد مشتریان دائمی آینده خواهند بود.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 min-w-[3rem] bg-goldWeb hexagon-shape flex items-center justify-center text-jet font-bold text-xl">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">افزایش سبد خرید (Upsell)</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                تجربه نشان داده افراد با کارت ۲ میلیونی، کالاهای گران‌تر (مثلاً ۳ میلیونی) انتخاب کرده و مابقی را پرداخت می‌کنند.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 min-w-[3rem] bg-goldWeb hexagon-shape flex items-center justify-center text-jet font-bold text-xl">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">برندینگ مشترک (Co-Branding)</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                قرار گرفتن نام مستر کالا در کنار یکتانت به عنوان پارتنر منتخب سازمانی در اکوسیستم استارتاپی.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 min-w-[3rem] bg-goldWeb hexagon-shape flex items-center justify-center text-jet font-bold text-xl">4</div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">لجستیک آسان</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                حذف دردسرهای بسته‌بندی کادو فیزیکی؛ تماماً دیجیتال و با فرآیند فروش عادی سایت شما.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Timeline -->
+        <section class="slide bg-white">
+            <div class="container mx-auto px-12 h-full flex flex-col justify-center">
+                <h2 class="text-4xl font-bold mb-16 text-center text-jet">نقشه راه اجرا</h2>
+
+                <div class="relative w-full max-w-5xl mx-auto">
+                    <!-- Line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 z-0"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        <!-- Step 1 -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-jet text-goldWeb rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-8 ring-white shadow-lg">
+                                ۱
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">توافق و قرارداد</h3>
+                            <p class="text-sm text-gray-500">نهایی‌سازی مبلغ و امضا</p>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-jet text-goldWeb rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-8 ring-white shadow-lg">
+                                ۲
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">صدور کدها</h3>
+                            <p class="text-sm text-gray-500">تولید کدهای اعتباری یا ولت</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-jet text-goldWeb rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-8 ring-white shadow-lg">
+                                ۳
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">توزیع دیجیتال</h3>
+                            <p class="text-sm text-gray-500">ارسال به پرسنل یکتانت</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-goldWeb text-jet rounded-full flex items-center justify-center text-2xl font-bold mb-4 ring-8 ring-white shadow-lg">
+                                ۴
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">شروع خرید</h3>
+                            <p class="text-sm text-gray-500">ثبت سفارش در مستر کالا</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-20 mx-auto bg-green-50 border border-green-200 p-4 rounded-lg flex items-center gap-3 text-green-700 max-w-2xl">
+                    <span class="text-2xl">💡</span>
+                    <p class="font-bold">پیشنهاد ویژه: در صورت امکان، ارسال رایگان برای این کمپین فعال شود تا شیرینی هدیه دوچندان گردد.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: Closing -->
+        <section class="slide bg-whiteSmoke text-jet relative">
+             <div class="container mx-auto px-12 h-full flex flex-col justify-center items-center text-center">
+                
+                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-snug">
+                    آماده ساختن تجربه‌ای متفاوت <br/> برای نوروز ۱۴۰۳
+                </h2>
+
+                <div class="w-24 h-24 bg-gradient-to-br from-goldWeb to-saffron hexagon-shape flex items-center justify-center text-4xl mb-8 shadow-xl">
+                    🤝
+                </div>
+
+                <p class="text-xl text-gray-600 mb-12 max-w-2xl">
+                    ما در یکتانت منتظر نهایی‌سازی قرارداد و شروع این همکاری هیجان‌انگیز هستیم.
+                </p>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-goldWeb w-full max-w-md">
+                    <h3 class="font-bold text-lg mb-4 text-gray-400">اطلاعات تماس</h3>
+                    <div class="space-y-3 text-right">
+                        <div class="flex justify-between border-b border-gray-100 pb-2">
+                            <span class="text-gray-500">مدیر منابع انسانی</span>
+                            <span class="font-bold">آقای ...</span>
+                        </div>
+                        <div class="flex justify-between border-b border-gray-100 pb-2">
+                            <span class="text-gray-500">تلفن</span>
+                            <span class="font-bold" dir="ltr">021 - .... ....</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">ایمیل</span>
+                            <span class="font-bold" dir="ltr">hr@yektanet.com</span>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+             <!-- Footer branding -->
+             <div class="absolute bottom-6 w-full text-center opacity-30 font-bold text-2xl tracking-widest uppercase">
+                 YEKTANET <span class="text-goldWeb">x</span> MASTERKALA
+             </div>
+        </section>
+
+    </main>
+
+    <!-- Navigation Controls -->
+    <div class="fixed bottom-8 left-8 z-50 flex gap-4">
+        <button id="prevBtn" class="w-12 h-12 bg-white text-jet rounded-full shadow-lg flex items-center justify-center hover:bg-gray-100 transition-colors focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button id="nextBtn" class="w-12 h-12 bg-jet text-goldWeb rounded-full shadow-lg flex items-center justify-center hover:bg-gray-800 transition-colors focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Slide Number Indicator -->
+    <div class="fixed bottom-8 right-8 z-50 bg-jet/80 text-white px-4 py-2 rounded-full font-mono text-sm backdrop-blur-sm">
+        <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">7</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentSlideNum = document.getElementById('currentSlideNum');
+            const totalSlidesNum = document.getElementById('totalSlidesNum');
+
+            totalSlidesNum.textContent = totalSlides;
+
+            function updateSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                currentSlideNum.textContent = index + 1;
+            }
+
+            function nextSlide() {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlide(currentSlide);
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlide(currentSlide);
+                }
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') { // Previous in RTL context visually, but logically Next in slide deck flow usually
+                    // In RTL presentation, Left Arrow usually means "Go Forward" (Next) visually? 
+                    // Let's stick to standard Key codes: Right -> Next, Left -> Prev usually for decks regardless of RTL
+                    // Actually for RTL, Left often means Back. Let's map Right to Next to be intuitive with the icons.
+                    prevSlide(); 
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide(); 
+                } else if (e.key === ' ' || e.key === 'Enter') {
+                    nextSlide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
